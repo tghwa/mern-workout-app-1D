@@ -3,10 +3,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import workoutRoutes from './routes/workouts.js'; // Ensure to include the .js extension
 
+const cors = require("cors");
+
 // Express app
 const app = express();
 
 // Middleware
+app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
